@@ -1,0 +1,11 @@
+AI: Hello Aniket Deshmukh, it's great to meet you. Let's start with the first question. Can you explain how you optimized data transformation pipelines during your time at Tata Consultancy Services?
+You: So I optimize data transformation pipelines by replacing the loops with the vectorized panda operations and implementing batch processing for the large data set and using joblib for the parallel execution also for memory efficiency.
+AI: Thank you for your response. Next question: Can you describe the process you used to implement Retrieval-Augmented Generation for the AI-powered Customer Support Bot?
+You: So I implemented Rack by integrating Azure AI Search to retrieve the rejoin document based on the user queries using semantic and the vectorized search. The retrieval contained was passed to Azure Open AI to generate the accurate and the grounded response.
+AI: Thanks for sharing that. Moving on to the next question: How did you utilize machine learning models for predictive maintenance in your Digital Twin project?
+You: I used machine learning models like random forest and SVM to predict the equipment failure based on the sensors data. So this model analyzed the real time data and historical data streams to forecast the anomalies enabling proactive maintenance and reducing human reducing downtime.
+AI: Thank you for your detailed answer. For the final question: Can you explain how you built the interactive Gradio chatbot UI with multi-turn conversation memory using LangChain?
+You: So I built this radio chatbot UI by integrating with Lang chains conversation chain which maintains multi turn conversation memory using the conversation buffer memory. So the UI captures the user input, passed it to the link chain pipeline and displayed the updated dialogue in real time using the radio.
+AI: That concludes our interview. Thanks for joining. You may now close the session.
+You: Thank you.
+AI: You're welcome! Have a great day!
