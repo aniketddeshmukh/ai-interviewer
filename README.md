@@ -46,7 +46,6 @@
 - **Live Chat & Transcripts:** All interactions are recorded and available for review.
 - **Elegant, Responsive UI:** Beautiful, glassmorphic design with gradients and modern effects.
 - **Status & Timer:** Monitor your interview status and elapsed time at a glance.
-- **Secure & Scalable:** Built with best practices for security and scalability.
 - **Azure Storage Integration:** Interview documents are securely uploaded to Azure Storage after each session.
 
 ---
@@ -67,7 +66,7 @@
 ai-interviewer/
 ├── ai-frontend/         # React frontend (Vite, Tailwind)
 ├── backend/             # FastAPI backend, resume parser, interview engine
-├── sample-documents/    # (Optional) Sample resumes, transcripts, reports (no real user data)
+├── sample-documents/    # Sample resumes, transcripts, reports (no real user data)
 ├── .env.example         # Example environment variables
 ├── README.md            # Project documentation
 ├── requirements.txt     # Backend dependencies
