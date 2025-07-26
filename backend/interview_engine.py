@@ -1,3 +1,6 @@
+# This module provides speech and OpenAI utility functions for the backend.
+# The actual interview prompt and conversation context are managed in websocket_server.py.
+
 import os
 import asyncio
 import azure.cognitiveservices.speech as speechsdk
@@ -5,6 +8,7 @@ from openai import AzureOpenAI
 import threading
 import time
 from dotenv import load_dotenv
+
 # -------------------------------
 # 🔧 Globals
 # -------------------------------
@@ -49,22 +53,6 @@ client = AzureOpenAI(
 )
 
 # -------------------------------
-# 🧾 Conversation Context
-# -------------------------------
-conversation_context = [
-    {
-        "role": "system",
-        "content": (
-             "You are an AI interviewer. Greet the candidate first. Ask exactly 5 technical questions about Python, one at a time. DO NOT repeate questions even if user is wrong. "
-            "Speak like a human. Do not explain answers unless user is totally wrong. Just aknoledge "
-            "If user is silent or gives gibberish, repeat the same question once. "
-            "Do not exceed 5 questions. After the last one, say 'That concludes our interview. Thank you!' "
-            "At the end, we'll evaluate the candidate's performance. Avoid unnecessary dialogue."
-        )
-    }
-]
-
-# -------------------------------
 # 🗣️ Speak (Azure TTS)
 # -------------------------------
 async def speak_async(text):
@@ -83,7 +71,6 @@ async def speak_async(text):
     speech_synthesizer.speak_text_async(text)
     done.wait()
     is_speaking.clear()
-    # time.sleep(0.8)
 
 # -------------------------------
 # 🤖 OpenAI Chat
@@ -98,29 +85,6 @@ async def openai_chat_async(messages):
             max_tokens=400
         ).choices[0].message.content
     )
-
-# -------------------------------
-# 🔁 Handle User Input
-# -------------------------------
-async def handle_user_input(text):
-    global shutdown_event
-    text = text.strip()
-    print(f"[USER] {text}")
-
-    if speak_callback:
-        await speak_callback(f"__USER__::{text}")
-
-    if not text or len(text) < 3:
-        await speak_async("I couldn't hear you properly. I'll repeat the question.")
-        last_q = next((msg["content"] for msg in reversed(conversation_context) if msg["role"] == "assistant"), None)
-        if last_q:
-            await speak_async(last_q)
-        return
-
-    conversation_context.append({ "role": "user", "content": text })
-    ai_reply = await openai_chat_async(conversation_context)
-    conversation_context.append({ "role": "assistant", "content": ai_reply })
-    await speak_async(ai_reply)
 
 # -------------------------------
 # 🎧 Streaming Recognition
@@ -172,22 +136,3 @@ def start_streaming_recognition(callback, loop, shutdown_event_param):
     # Start both recognition and silence monitor in threads
     threading.Thread(target=listen_loop, daemon=True).start()
     threading.Thread(target=flush_if_silent, daemon=True).start()
-
-
-
-# -------------------------------
-# 🚀 Main (Standalone Testing)
-# -------------------------------
-async def main():
-    global shutdown_event
-    shutdown_event = asyncio.Event()
-    loop = asyncio.get_running_loop()
-    start_streaming_recognition(handle_user_input, loop, shutdown_event)
-    await speak_async("Hello! Let's start your interview.")
-    await shutdown_event.wait()
-
-if __name__ == "__main__":
-    try:
-        asyncio.run(main())
-    except KeyboardInterrupt:
-        print("🛑 Interview ended.")
