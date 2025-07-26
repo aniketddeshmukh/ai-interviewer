@@ -79,7 +79,7 @@ ai-interviewer/
 ## 🚀 Quick Start
 
 ```sh
-git clone https://github.com/yourusername/ai-interviewer.git
+git clone https://github.com/aniketddeshmukh/ai-interviewer.git
 cd ai-interviewer
 cp .env.example .env  # Add your credentials
 cd backend
