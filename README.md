@@ -125,7 +125,7 @@ AZURE_CONTAINER_NAME=your_azure_container_name
 
 | Home Page                                               | Interview Page                                | End Page                                |
 | ------------------------------------------------------- | --------------------------------------------- | --------------------------------------- |
-| ![](ai-interviewer\ai-frontend\src\assets\homePage.png) | ![](ai-frontend\src\assets\interviewPage.png) | ![](ai-frontend\src\assets\endPage.png) |
+| ![](ai-frontend/src/assets/homePage.png) | ![](ai-frontend/src/assets/interviewPage.png) | ![](ai-frontend/src/assets/endPage.png) |
 
 ---
 
