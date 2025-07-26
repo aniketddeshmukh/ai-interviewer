@@ -18,16 +18,16 @@
 ## Table of Contents
 
 - [Overview](#overview)
-- [Features](#features)
-- [Technology Stack](#technology-stack)
-- [Project Structure](#project-structure)
-- [Quick Start](#quick-start)
-- [Environment Variables](#environment-variables)
-- [Sample Documents](#sample-documents)
-- [Screenshots](#screenshots)
-- [For Developers](#for-developers)
-- [Contributing](#contributing)
-- [License](#license)
+- [Features](#-features)
+- [Technology Stack](#-technology-stack)
+- [Project Structure](#-project-structure)
+- [Quick Start](#-quick-start)
+- [Environment Variables](#-environment-variables)
+- [Sample Documents](#-sample-documents)
+- [Screenshots](#-screenshots)
+- [For Developers](#-for-developers)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 ---
 
