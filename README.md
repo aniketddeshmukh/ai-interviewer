@@ -9,8 +9,8 @@
 [![React](https://img.shields.io/badge/Frontend-React-blue?logo=react)](https://react.dev/)
 [![FastAPI](https://img.shields.io/badge/Backend-FastAPI-green?logo=fastapi)](https://fastapi.tiangolo.com/)
 [![Azure](https://img.shields.io/badge/AI-Azure-blue?logo=microsoft-azure)](https://azure.microsoft.com/)
-![GitHub stars](https://img.shields.io/github/stars/yourusername/ai-interviewer?style=social)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/ai-interviewer?style=social)
+![GitHub stars](https://img.shields.io/github/stars/aniketddeshmukh/ai-interviewer?style=social)
+![GitHub forks](https://img.shields.io/github/forks/aniketddeshmukh/ai-interviewer?style=social)
 [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](CONTRIBUTING.md)
 
 ---
